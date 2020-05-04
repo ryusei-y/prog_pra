@@ -2,6 +2,9 @@
  font-family:serif;
  box-sizing: border-box;
 }
+li {
+ list-style: none;
+}
 
 img {
  width: auto;
@@ -16,7 +19,6 @@ body {
  margin: 0 15%;
  padding: 0;
  background-color:white;
- height:8000px;
 }
 .container {
  margin: 0 8%;
@@ -57,11 +59,12 @@ h2 {
 .contents p {
  font-size:40px;
  padding: 25px 0 25px 20px;
- margin-left: 50px;
+ margin: 50px auto;
  background-color:rgba(250,100,100,0.4);
  width: 60%;
  border-left:solid 20px rgb(250,100,100);
  box-shadow: 0 7px 7px rgb(0,0,0,0.4);
+ border-radius: 10px;
 }
 
 .progate {
@@ -87,7 +90,7 @@ h2 {
 }
 .courses {
  text-align: center;
- height: 1350px;
+ height: 1150px;
  margin: 0 8%;
 }
 .course {
@@ -181,5 +184,21 @@ label {
   background-color: rgb(250,100,100,0.8);
 }
 
-
-
+footer {
+ background-color: rgb(250,100,100,0.4);
+ height: 210px;
+ color: rgba(20,20,20,0.5);
+ margin-top: 150px;
+}
+.footer-logo {
+ float: left;
+ font-size: 30px;
+ line-height: 130px;
+}
+.footer-right {
+ float: right;
+ line-height: 60px;
+}
+.footer-right li {
+ font-size: 20px;
+}

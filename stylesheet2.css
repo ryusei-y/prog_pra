@@ -104,7 +104,7 @@ h2 {
  height: 280px;
  border-radius: 20px;
 }
-.course a {
+.course-icon a {
  display: inline-block;
  color: rgb(100,100,100);
  font-size: 25px;
@@ -114,6 +114,9 @@ h2 {
  box-shadow: 0 5px 5px rgba(0,0,0,0.4);
  border-radius: 10px;
  letter-spacing: 4px;
+}
+.course-icon a:visited {
+ color:#00ccff;
 }
 
 .pro-html {

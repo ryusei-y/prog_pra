@@ -5,15 +5,39 @@
 						<meta name="viewport" content="width=device-wdth, initial-scale=1.0">
 						<title>progate.training</title>
 						<link rel="stylesheet" href="stylesheet2.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 			</head>
 
 <body>
 			<header>
 						<div class="header-left">
-									<div class="header-logo">__Progate Training________</div>
+									<div class="header-logo">__Progate Training_____</div>
 						</div>
+     <div class="header-right">
+        <a class="login" href="#">ログイン</a>
+     </div>
 			</header>
-		
+  
+		<div class="modal-wrapper">
+    <div class="modal">
+      <div class="login-modal">
+        
+        <div class="close-modal">
+          <i class="fa fa-2x fa-times"></i>
+        </div>
+        <div class="login-form">
+          <p>Emailログイン</p>
+        </div>
+        <div>
+          <input class="login-mail" type="text" placeholder="メールアドレス">
+          <input class="login-pass" type="text" placeholder="パスワード">
+          <input class="login-btn" type="submit" value="ログイン">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
 			<div class="top-wrapper">
 						<div class="container">
 									<div class="contents">
@@ -68,12 +92,21 @@
 						<div class="container">
 									<div class="form-title">お問い合わせ</div>
 									<form>
-												<label for="name">メールアドレス</label>
-												<input class="mail-form" type="text">
-												<label for="password">パスワード</label>
-												<input class="password-form" type="text">
-												<label for="contents">お問い合わせ内容</label>
-												<textarea class="contents-form"></textarea>
+           <div class="forms">
+             <div class="contact-label">メールアドレス<span>▼</span></div>
+												 <input class="contact" type="text">
+           </div>
+        
+										 <div class="forms">
+             <div class="contact-label">パスワード<span>▼</span></div>
+												 <input class="contact" type="text">
+           </div>
+        
+           <div class="forms">
+             <div class="contact-label">お問い合わせ内容<span>▼</span></div>
+												 <textarea class="contact"></textarea>
+           </div>
+        
 												<input class="btn-contact" type="submit" value="送信">
 									</form>
 						</div>
@@ -91,5 +124,44 @@
          </div>
       </div>
 			</footer>
-</body>
+  
+  
+  <! ------------ ここからjQuery ------------>
+  
+<script
+  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+</script>
+  <script>
+    
+    $(function(){
+      $('.login').click(function(){
+        $('.modal-wrapper').fadeIn(100);
+        $('body').addClass('fixed');
+      });
+      
+      $('.close-modal').click(function(){
+        $('.modal-wrapper').fadeOut(100);
+        $('body').removeClass('fixed');
+      });
+      
+      
+      $('.contact-label').click(function() {
+        var $contact = $(this).parent().find('.contact');
+        if(!$contact.hasClass('open')) {
+          $contact.addClass('open'); 
+          $contact.slideDown();
+          $(this).find('span').text('▲');
+      } else {
+          $contact.removeClass('open');
+          $contact.slideUp();
+          $(this).find('span').text('▼');
+      }
+      });
+      
+      
+    });
+  </script>
+  
+  
+  </body>
 </html>

@@ -292,7 +292,7 @@ h2 {
   margin-top: 100px;
 }
 form {
-  padding: 40px 250px 0;
+  padding: 40px 220px 0 220px;
 }
 .form-title {
   text-align: center;
@@ -339,7 +339,7 @@ form {
   font-size: 20px;
   box-shadow: 0 5px rgba(0,0,0,0.8);
   border-radius: 7px;
-  margin: 30px auto 0 auto;
+  margin: 30px auto;
 }
 .btn-contact:hover {
   transition: background 0.4s;

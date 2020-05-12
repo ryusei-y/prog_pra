@@ -11,7 +11,9 @@
 <body>
 			<header>
 						<div class="header-left">
-									<div class="header-logo">__Progate Training_____</div>
+        <div class="header-logo">
+          <em><strong>__Progate Training_____</strong></em>
+        </div>
 						</div>
      <div class="header-right">
         <a class="login" href="#">ログイン</a>
@@ -43,9 +45,9 @@
 									<div class="contents">
 												<h1>__Progateで、</h1>
 												<h2>プログラミングを学ぼう___</h2>
-												<p>▶︎ Progateとは</p>
-												<p>▶︎ コース一覧</p>
-												<p>▶︎ お問い合わせ</p>
+												<p id="to-progate">▶︎ Progateとは</p>
+												<p id="to-courses">▶︎ コース一覧</p>
+												<p id="to-contact">▶︎ お問い合わせ</p>
 									</div>
 						</div>
 			</div>
@@ -62,30 +64,39 @@
 		
 			<div class="courses">
 						<div class="courses-title">コース一覧</div>
-						<div class="course">
-									<div class="course-icon">
-												<img src="progate.img/prohtmlcss.png">
-												<a class="pro-html" href="https://prog-8.com/languages/html">▶︎HTMLCSS学習へ</a>
-									</div>
-						</div>
-						<div class="course">
-									<div class="course-icon">
-												<img src="progate.img/projs.png">
-												<a class="pro-js" href="https://prog8.com/languages/es6">▶︎JavaScriptへ</a>
-									</div>
-						</div>
-						<div class="course">
-									<div class="course-icon">
-												<img src="progate.img/projquery.png">
-												<a class="pro-jquery" href="https://prog8.com/languages/jquery">▶︎jQueryへ</a>
-									</div>
-						</div>
-						<div class="course">
-									<div class="course-icon">
-												<img src="progate.img/prophp.png">
-												<a class="pro-php" href="https://prog-8.com/languages/php">▶︎PHPへ</a>
-									</div>
-						</div>
+      <div class="course-main">
+        <span class="change-btn prev-btn">◀︎</span>
+        <ul>
+						    <li class="course active">
+								    <div class="course-icon">
+												  <img src="progate.img/prohtmlcss.png">
+												  <a class="pro-html" href="https://prog-8.com/languages/html">▶︎HTMLCSS学習へ</a>
+									   </div>
+						    </li>
+        
+						    <li class="course">
+								    <div class="course-icon">
+												  <img src="progate.img/projs.png">
+												  <a class="pro-js" href="https://prog8.com/languages/es6">▶︎JavaScriptへ</a>
+            </div>
+						    </li>
+        
+						    <li class="course">
+								    <div class="course-icon">
+												  <img src="progate.img/projquery.png">
+												  <a class="pro-jquery" href="https://prog8.com/languages/jquery">▶︎jQueryへ</a>
+									   </div>
+						    </li>
+        
+						    <li class="course">
+								    <div class="course-icon">
+												  <img src="progate.img/prophp.png">
+												  <a class="pro-php" href="https://prog-8.com/languages/php">▶︎PHPへ</a>
+									   </div>
+          </li>
+        </ul>
+        <span class="change-btn next-btn">▶︎</span>
+     </div>   
 			</div>
 	 
 			<div class="contact-form">
@@ -104,14 +115,24 @@
         
            <div class="forms">
              <div class="contact-label">お問い合わせ内容<span>▼</span></div>
-												 <textarea class="contact"></textarea>
+												 <textarea class="contact" id="text-form"></textarea>
            </div>
         
 												<input class="btn-contact" type="submit" value="送信">
 									</form>
 						</div>
 			</div>
-			
+   
+    <div class="submit-modal-wrapper"> 
+      <div class="modal">
+        <div class="recieve-modal">
+          <div class="recieve">お問い合わせ内容：<br>
+            <span id="recieve-text"></span></div>
+          <div class="ok-modal">OK</div>
+        </div>
+      </div>
+    </div>
+  
 			<footer>
       <div class="container">
          <div class="footer-logo">__Training Progate___</div>
@@ -126,7 +147,7 @@
 			</footer>
   
   
-  <! ------------ ここからjQuery ------------>
+  <! ---------------------- ここからjQuery ---------------------->
   
 <script
   src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
@@ -134,16 +155,27 @@
   <script>
     
     $(function(){
+      
       $('.login').click(function(){
         $('.modal-wrapper').fadeIn(100);
         $('body').addClass('fixed');
       });
-      
       $('.close-modal').click(function(){
         $('.modal-wrapper').fadeOut(100);
         $('body').removeClass('fixed');
       });
       
+      $('.btn-contact').click(function(){
+        var textRecive = $('#text-form').val();
+        $('#recieve-text').text(textRecive);
+        $('.submit-modal-wrapper').fadeIn();
+        $('body').addClass('fixed');
+      });
+      
+      $('.ok-modal').click(function(){
+        $('.submit-modal-wrapper').fadeOut();
+        $('body').removeClass('fixed');
+      });
       
       $('.contact-label').click(function() {
         var $contact = $(this).parent().find('.contact');
@@ -156,6 +188,33 @@
           $contact.slideUp();
           $(this).find('span').text('▼');
       }
+      });
+      
+      $('.change-btn').click(function(){
+        var $lessonIndex = $('.active');
+        $lessonIndex.removeClass('active');
+        
+        if ($(this).hasClass('next-btn')) {
+          $lessonIndex.next().addClass('active');
+        } else {
+          $lessonIndex.prev().addClass('active');
+        }
+      });
+      
+      $('#to-progate').click(function(){
+        $('html, body').scrollTop(1070);
+      });
+      
+      $('#to-courses').click(function(){
+        $('html, body').scrollTop(1425);
+      });
+      
+      $('#to-contact').click(function(){
+        $('html, body').scrollTop(2170);
+      });
+      
+      $('.footer-logo').click(function(){
+        $('html, body').scrollTop(0);
       });
       
       

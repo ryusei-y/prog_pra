@@ -45,16 +45,16 @@
 									<div class="contents">
 												<h1>__Progateで、</h1>
 												<h2>プログラミングを学ぼう___</h2>
-												<p id="to-progate">▶︎ Progateとは</p>
-												<p id="to-courses">▶︎ コース一覧</p>
-												<p id="to-contact">▶︎ お問い合わせ</p>
+												<a id="to-progate" href="#progate-title">▶︎ Progateとは</a>
+												<a id="to-courses" href="#courses-title">▶︎ コース一覧</a>
+												<a id="to-contact" href="#form-title">▶︎ お問い合わせ</a>
 									</div>
 						</div>
 			</div>
 		
 			<div class="progate">
 						<div class="container">
-									<div class="progate-title">Progateについて</div>
+									<div class="progate-title" id="progate-title">Progateについて</div>
 									<div class="explanation">
 												Progateとは、「初心者から、創れる人を生み出す」 を理念に、オンラインプログラミング学習サービスです。
 												Web上でプログラミングを学べる無料の学習サイトのことです。 HTMLとCSS、PHP、jQuery、Rubyの５つの言語について学ぶことが出来ます。 Progateのよいところは、単なる解説系のサイトではないということ。
@@ -63,7 +63,7 @@
 			</div>
 		
 			<div class="courses">
-						<div class="courses-title">コース一覧</div>
+						<div class="courses-title" id="courses-title">コース一覧</div>
       <div class="course-main">
         <span class="change-btn prev-btn">◀︎</span>
         <ul>
@@ -99,9 +99,9 @@
      </div>   
 			</div>
 	 
-			<div class="contact-form">
+			<div class="contact-form" >
 						<div class="container">
-									<div class="form-title">お問い合わせ</div>
+									<div class="form-title" id="form-title">お問い合わせ</div>
 									<form>
            <div class="forms">
              <div class="contact-label">メールアドレス<span>▼</span></div>
@@ -201,21 +201,18 @@
         }
       });
       
-      $('#to-progate').click(function(){
-        $('html, body').scrollTop(1140);
-      });
-      
-      $('#to-courses').click(function(){
-        $('html, body').scrollTop(1552);
-      });
-      
-      $('#to-contact').click(function(){
-        $('html, body').scrollTop(2275);
-      });
-      
       $('.footer-logo').click(function(){
-        $('html, body').scrollTop(0);
+        $('html, body').animate({
+          'scrollTop':0
+        }, 300);
       });
+      
+      $('.contents p').click(function(){
+        var clickedHref = $(this).attr('href');
+        var position = $(clickedHref).offset().top;
+        
+        'scrollTop':position
+      }, 500);
       
       
     });

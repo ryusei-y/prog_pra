@@ -156,6 +156,22 @@
     
     $(function(){
       
+      
+      $('.contents p').click(function(){
+        var clickedHref = $(this).attr('href');
+        var position = $(clickedHref).offset().top;
+        $('html, body').animate({
+        'scrollTop':position
+        }, 300);
+      });
+    
+      $('.footer-logo').click(function(){
+        $('html, body').animate({
+          'scrollTop':0
+        }, 300);
+      });
+      
+      
       $('.login').click(function(){
         $('.modal-wrapper').fadeIn(100);
         $('body').addClass('fixed');
@@ -177,6 +193,7 @@
         $('body').removeClass('fixed');
       });
       
+      
       $('.contact-label').click(function() {
         var $contact = $(this).parent().find('.contact');
         if(!$contact.hasClass('open')) {
@@ -190,6 +207,7 @@
       }
       });
       
+      
       $('.change-btn').click(function(){
         var $lessonIndex = $('.active');
         $lessonIndex.removeClass('active');
@@ -201,18 +219,6 @@
         }
       });
       
-      $('.footer-logo').click(function(){
-        $('html, body').animate({
-          'scrollTop':0
-        }, 300);
-      });
-      
-      $('.contents p').click(function(){
-        var clickedHref = $(this).attr('href');
-        var position = $(clickedHref).offset().top;
-        
-        'scrollTop':position
-      }, 500);
       
       
     });

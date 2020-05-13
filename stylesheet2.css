@@ -164,17 +164,20 @@ h2 {
  width: 74%;
  margin-bottom: 100px;
 }
-.contents p {
+
+.contents a {
+ display: block;
  font-size:40px;
  padding: 25px 0 25px 20px;
  margin: 50px auto;
+ color: rgba(0,0,0,0.7);
  background-color:rgba(250,100,100,0.4);
  width: 60%;
  border-left:solid 20px rgb(250,100,100);
  box-shadow: 0 7px 7px rgb(0,0,0,0.4);
  border-radius: 10px;
 }
-.contents p:hover {
+.contents a:hover {
   cursor: pointer;
   background-color: rgba(250,100,100,0.7);
   transition: all 0.4s;
@@ -194,8 +197,6 @@ h2 {
  padding:20px 0;
  border-top:double 13px darksalmon;
 }
-
-
 
 .courses-title {
  color:darksalmon;
@@ -293,6 +294,7 @@ h2 {
 }
 form {
   padding: 40px 220px 0 220px;
+  margin: 0 auto;
 }
 .form-title {
   text-align: center;
@@ -339,7 +341,7 @@ form {
   font-size: 20px;
   box-shadow: 0 5px rgba(0,0,0,0.8);
   border-radius: 7px;
-  margin: 30px auto;
+  margin: 30px  auto;
 }
 .btn-contact:hover {
   transition: background 0.4s;
@@ -372,7 +374,3 @@ footer {
 .footer-right li {
  font-size: 20px;
 }
-
-
-
-

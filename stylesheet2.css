@@ -10,7 +10,9 @@
 li {
  list-style: none;
 }
-
+a {
+  text-decoration: none;
+}
 img {
  width: auto;
  max-width: 100%;
@@ -206,7 +208,7 @@ h2 {
  border-bottom:double 13px darksalmon;
 }
 .courses {
- margin: 0 8%;
+ margin: 0 8% 150px 8%;
 }
 .course-main {
  display: flex;
@@ -231,12 +233,6 @@ h2 {
 .change-btn:hover {
   background-color: rgba(0,0,0,0.2);
   transition: all 0.5s;
-}
-.prev-btn {
-  
-}
-.next-btn {
-  
 }
 .course img {
  border: 5px dashed rgb(20,20,20);
@@ -288,10 +284,6 @@ h2 {
 }
 
 
-
-.contact-form {
-  margin-top: 100px;
-}
 form {
   padding: 40px 220px 0 220px;
   margin: 0 auto;
@@ -364,13 +356,17 @@ footer {
 .footer-logo {
  float: left;
  font-size: 30px;
-  margin-top: 40px;
+ margin-top: 40px;
  cursor: pointer;
 }
-.footer-right {
+#footer-right {
+ display: flex;
+ flex-direction: column;
  float: right;
- line-height: 60px;
-}
-.footer-right li {
+ line-height: 55px;
  font-size: 20px;
 }
+#footer-right a {
+  color: rgba(20,20,20,0.7);
+}
+

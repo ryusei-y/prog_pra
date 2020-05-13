@@ -135,14 +135,12 @@
   
 			<footer>
       <div class="container">
-         <div class="footer-logo">__Training Progate___</div>
-         <div class="footer-right">
-            <ul>
-               <li>Progateについて</li>
-               <li>コース一覧</li>
-               <li>お問い合わせ</li>
-            </ul>
-         </div>
+      <div class="footer-logo">__Training Progate___</div>
+        <ul id="footer-right">
+          <a href="#progate-title">Progateについて</a>
+          <a href="#courses-title">コース一覧</a>
+          <a href="#form-title">お問い合わせ</a>
+        </ul>
       </div>
 			</footer>
   
@@ -157,11 +155,19 @@
     $(function(){
       
       
-      $('.contents p').click(function(){
+      $('.contents a').click(function(){
         var clickedHref = $(this).attr('href');
         var position = $(clickedHref).offset().top;
         $('html, body').animate({
         'scrollTop':position
+        }, 300);
+      });
+      
+      $('#footer-right a').click(function(){
+        var clickedHref = $(this).attr('href');
+        var position = $(clickedHref).offset().top;
+        $('html, body').animate({
+          'scrollTop':position
         }, 300);
       });
     
